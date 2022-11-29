@@ -8,7 +8,7 @@ from pyiwara import Video
 
 url="https://ecchi.iwara.tv/videos/xxxxxx"
 v=Video(url)
-v["Source"].download("test.mp4")
+v["Source"].download("test")
 ```
 
 ## 詳細
@@ -38,9 +38,25 @@ url:str 動画のURL(https://ecchi.iwara.tv/videos/xxxxxx ,videos/xxxxxx , xxxxx
 - damp_meta_data(path) pathで指定された動画ファイルにメタデータを付与
 
 ##### 特殊メソッド
-- Video[Quality] 指定されたクオリティのファイル
+- Video[Quality] 指定された解像度のファイル
 - イテレータ      ファイルを順番に取り出し
 - len            ファイルの数
+
+
+### class File
+Videoに含まれるオブジェクトで自分で作成する必要はありません
+
+##### プロパティ
+- ext:str         ファイル拡張子 
+- quality:str      動画の解像度
+- url:str         動画のURL
+
+##### メソッド
+- download(path, ext:bool, meta:bool, callback:class) 
+    - path 保存先
+    - ext:bool ファイルに拡張子を付与するか
+    - meta:bool 動画にメタデータを付与するか
+    - callback 進捗を表示するためのクラス(__init__(filesize),update(size),close())が必要
 
 
 ### class User
