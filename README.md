@@ -44,7 +44,7 @@ url:str 動画のURL(https://ecchi.iwara.tv/videos/xxxxxx ,videos/xxxxxx , xxxxx
 
 
 ### class User
-Iwaraの動画に対する操作を行います。
+Iwaraの投稿者に対する操作を行います。
 
 #### 使用例
 ```python:sample2.py
@@ -56,7 +56,7 @@ for video in u:
     print(video.title)
 ```
 ##### 引数
-url:str ユーザーのURL(https://ecchi.iwara.tv/playlist/xxxxxxx ,/playlist/xxxxxxx , xxxxxx)
+url:str ユーザーのURL(https://ecchi.iwara.tv/users/xxxxxx ,/users/xxxxxx , xxxxxx)
 
 ##### プロパティ
 - url:str           URL
@@ -66,15 +66,39 @@ url:str ユーザーのURL(https://ecchi.iwara.tv/playlist/xxxxxxx ,/playlist/xx
 - thumbnail:bytes   サムネイル
 - thumbnail_url:str 動画のサムネイルのURL
 - comment:str       概要
-
-##### メソッド
-- damp_meta_data(path) pathで指定された動画ファイルにメタデータを付与
+- urls:list[str] 動画のURLのリスト
 
 ##### 特殊メソッド
-- Video[Quality] 指定されたクオリティのファイル
-- イテレータ      ファイルを順番に取り出し
-- len            ファイルの数
+- イテレータ      動画を順番に取り出し
+- len            動画の数
 
+
+### class Playlist
+Iwaraのプレイリストに対する操作を行います。
+
+#### 使用例
+```python:sample3.py
+from pyiwara import Playlist
+
+url = "https://ecchi.iwara.tv/playlist/xxxxxxx"
+p = Playlist(url)
+for video in p:
+    print(video.title)
+```
+##### 引数
+url:str ユーザーのURL(https://ecchi.iwara.tv/playlist/xxxxxxx ,/playlist/xxxxxxx , xxxxxx)
+
+##### プロパティ
+- url:str           URL
+- title:str         プレイリストの名前
+- user:str 作成者
+- user_url 作成者URL
+- videos:list[Video]  動画のリスト
+- urls:list[str] 動画のURLのリスト
+
+##### 特殊メソッド
+- イテレータ      動画を順番に取り出し
+- len            動画の数
 
 
 
