@@ -23,32 +23,32 @@ Iwaraの動画に対する操作を行います。
   - xxxxxx
 
 ##### プロパティ
-| プロパティ    | 型         | 説明                                                   |
-| :------------ | :--------- | :----------------------------------------------------- |
-| url           | str        | URL                                                    |
-| id            | str        | https://ecchi.iwara.tv/videos/xxxxxxのxxxxxx部分       |
-| title         | str        | 動画タイトル                                           |
-| date          | datetime   | アップロード日時                                       |
-| files         | list[File] | ダウンロード可能なファイルのリスト(Fileについては後述) |
-| user          | str        | アップロード者名                                       |
-| user_url      | str        | アップロード者のURL                                    |
-| thumbnail     | bytes      | サムネイル                                             |
-| thumbnail_url | str        | 動画のサムネイルのURL                                  |
-| likes         | int        | 高評価数                                               |
-| views         | int        | 視聴回数                                               |
-| private       | bool       | プライベート動画か                                     |
-| comment       | str        | 動画のコメント                                         |
+| プロパティ    | 型           | 説明                                                   |
+| :------------ | :----------- | :----------------------------------------------------- |
+| url           | str          | URL                                                    |
+| id            | str          | https://ecchi.iwara.tv/videos/xxxxxxのxxxxxx部分       |
+| title         | str          | 動画タイトル                                           |
+| date          | datetime     | アップロード日時                                       |
+| files         | list\[File\] | ダウンロード可能なファイルのリスト(Fileについては後述) |
+| user          | str          | アップロード者名                                       |
+| user_url      | str          | アップロード者のURL                                    |
+| thumbnail     | bytes        | サムネイル                                             |
+| thumbnail_url | str          | 動画のサムネイルのURL                                  |
+| likes         | int          | 高評価数                                               |
+| views         | int          | 視聴回数                                               |
+| private       | bool         | プライベート動画か                                     |
+| comment       | str          | 動画のコメント                                         |
 
 ##### メソッド
 - damp_meta_data(path)
   - pathで指定された動画ファイルにメタデータを付与
 
 ##### 特殊メソッド
-| メソッド       | 説明                       |
-| :------------- | :------------------------- |
-| Video[Quality] | 指定された解像度のファイル |
-| イテレータ     | ファイルを順番に取り出し   |
-| len            | ファイルの数               |
+| メソッド         | 説明                       |
+| :--------------- | :------------------------- |
+| Video\[Quality\] | 指定された解像度のファイル |
+| イテレータ       | ファイルを順番に取り出し   |
+| len              | ファイルの数               |
 
 
 ### class File
@@ -71,6 +71,7 @@ Videoに含まれるオブジェクトで自分で作成する必要はありま
 ##### callbackの例
 ```python
 from tqdm import tqdm
+
 class progress:
     def __init__(self, size) -> None:
         self.size = size
@@ -102,16 +103,16 @@ for video in u:
   - xxxxxx
 
 ##### プロパティ
-| プロパティ    | 型          | 説明                  |
-| :------------ | :---------- | :-------------------- |
-| url           | str         | URL                   |
-| name          | str         | 名前                  |
-| join          | datetime    | 登録日                |
-| videos        | list[Video] | 動画のリスト          |
-| thumbnail     | bytes       | サムネイル            |
-| thumbnail_url | str         | 動画のサムネイルのURL |
-| comment       | str         | 概要                  |
-| urls          | list[str]   | 動画のURLのリスト     |
+| プロパティ    | 型            | 説明                  |
+| :------------ | :------------ | :-------------------- |
+| url           | str           | URL                   |
+| name          | str           | 名前                  |
+| join          | datetime      | 登録日                |
+| videos        | list\[Video\] | 動画のリスト          |
+| thumbnail     | bytes         | サムネイル            |
+| thumbnail_url | str           | 動画のサムネイルのURL |
+| comment       | str           | 概要                  |
+| urls          | list\[str\]   | 動画のURLのリスト     |
 
 ##### 特殊メソッド
 | メソッド   | 説明                 |
@@ -139,18 +140,31 @@ for video in p:
   - xxxxxx
 
 ##### プロパティ
-| プロパティ | 型          | 説明               |
-| :--------- | :---------- | :----------------- |
-| url        | str         | URL                |
-| title      | str         | プレイリストの名前 |
-| user       | str         | 作成者             |
-| user_url   | str         | 作成者URL          |
-| videos     | list[Video] | 動画のリスト       |
-| urls       | list[str]   | 動画のURLのリスト  |
+| プロパティ | 型            | 説明               |
+| :--------- | :------------ | :----------------- |
+| url        | str           | URL                |
+| title      | str           | プレイリストの名前 |
+| user       | str           | 作成者             |
+| user_url   | str           | 作成者URL          |
+| videos     | list\[Video\] | 動画のリスト       |
+| urls       | list\[str\]   | 動画のURLのリスト  |
 
 ##### 特殊メソッド
 | メソッド   | 説明                 |
 | :--------- | :------------------- |
 | イテレータ | 動画を順番に取り出し |
 | len        | 動画の数             |
+
+
+
+
+
+
+
+
+
+
+
+
+
 
