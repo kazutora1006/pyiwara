@@ -3,7 +3,7 @@ iwaraの情報を取得、ダウンロードができます。
 
 ### 簡単な使用例
 
-```python:sample.py
+```python
 from pyiwara import Video
 
 url="https://ecchi.iwara.tv/videos/xxxxxx"
@@ -63,10 +63,10 @@ Videoに含まれるオブジェクトで自分で作成する必要はありま
 Iwaraの投稿者に対する操作を行います。
 
 #### 使用例
-```python:sample2.py
+```python
 from pyiwara import User
 
-url = "https://ecchi.iwara.tv/playlist/xxxxxxx"
+url = "https://ecchi.iwara.tv/users/xxxxxxx"
 u = User(url)
 for video in u:
     print(video.title)
@@ -93,7 +93,7 @@ url:str ユーザーのURL(https://ecchi.iwara.tv/users/xxxxxx ,/users/xxxxxx , 
 Iwaraのプレイリストに対する操作を行います。
 
 #### 使用例
-```python:sample3.py
+```python
 from pyiwara import Playlist
 
 url = "https://ecchi.iwara.tv/playlist/xxxxxxx"
