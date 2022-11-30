@@ -1,6 +1,9 @@
 # pyiwara
 iwaraの情報を取得、ダウンロードができます。
 
+## インストール
+`pip install pyiwara`
+
 ### 簡単な使用例
 
 ```python
